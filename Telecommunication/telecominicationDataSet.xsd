@@ -149,7 +149,7 @@ SELECT cagriID, asistantID, müsteriID, gorusmeKonu, gorusmeTarih, baslangicSaat
             <Mappings>
               <Mapping SourceColumn="cagriID" DataSetColumn="cagriID" />
               <Mapping SourceColumn="asistantID" DataSetColumn="asistantID" />
-              <Mapping SourceColumn="müsteriID" DataSetColumn="müsteriID" />
+              <Mapping SourceColumn="müsteriID" DataSetColumn="musteriID" />
               <Mapping SourceColumn="gorusmeKonu" DataSetColumn="gorusmeKonu" />
               <Mapping SourceColumn="gorusmeTarih" DataSetColumn="gorusmeTarih" />
               <Mapping SourceColumn="baslangicSaati" DataSetColumn="baslangicSaati" />
@@ -516,7 +516,7 @@ SELECT müsteriID, cagriID, ad, soyad FROM tblMusteri WHERE (müsteriID = @müst
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="müsteriID" DataSetColumn="müsteriID" />
+              <Mapping SourceColumn="müsteriID" DataSetColumn="musteriID" />
               <Mapping SourceColumn="cagriID" DataSetColumn="cagriID" />
               <Mapping SourceColumn="ad" DataSetColumn="ad" />
               <Mapping SourceColumn="soyad" DataSetColumn="soyad" />
@@ -680,69 +680,54 @@ SELECT takimLideriID, ad, soyad, email, itirazID, yoneticiID FROM tblTakimLideri
   <xs:element name="telecominicationDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="telecominicationDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="telecominicationDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tblAsistan" msprop:Generator_RowClassName="tblAsistanRow" msprop:Generator_RowEvHandlerName="tblAsistanRowChangeEventHandler" msprop:Generator_RowDeletedName="tblAsistanRowDeleted" msprop:Generator_RowDeletingName="tblAsistanRowDeleting" msprop:Generator_RowEvArgName="tblAsistanRowChangeEvent" msprop:Generator_TablePropName="tblAsistan" msprop:Generator_RowChangedName="tblAsistanRowChanged" msprop:Generator_UserTableName="tblAsistan" msprop:Generator_RowChangingName="tblAsistanRowChanging" msprop:Generator_TableClassName="tblAsistanDataTable" msprop:Generator_TableVarName="tabletblAsistan">
+        <xs:element name="tblAsistan" msprop:Generator_RowEvHandlerName="tblAsistanRowChangeEventHandler" msprop:Generator_RowDeletedName="tblAsistanRowDeleted" msprop:Generator_RowDeletingName="tblAsistanRowDeleting" msprop:Generator_RowEvArgName="tblAsistanRowChangeEvent" msprop:Generator_TablePropName="tblAsistan" msprop:Generator_RowChangedName="tblAsistanRowChanged" msprop:Generator_UserTableName="tblAsistan" msprop:Generator_RowChangingName="tblAsistanRowChanging" msprop:Generator_RowClassName="tblAsistanRow" msprop:Generator_TableClassName="tblAsistanDataTable" msprop:Generator_TableVarName="tabletblAsistan">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="asistanID" msprop:Generator_UserColumnName="asistanID" msprop:Generator_ColumnPropNameInTable="asistanIDColumn" msprop:Generator_ColumnPropNameInRow="asistanID" msprop:Generator_ColumnVarNameInTable="columnasistanID" type="xs:int" />
-              <xs:element name="sicilNo" msprop:Generator_UserColumnName="sicilNo" msprop:Generator_ColumnPropNameInTable="sicilNoColumn" msprop:Generator_ColumnPropNameInRow="sicilNo" msprop:Generator_ColumnVarNameInTable="columnsicilNo" type="xs:int" minOccurs="0" />
-              <xs:element name="ad" msprop:Generator_UserColumnName="ad" msprop:Generator_ColumnPropNameInTable="adColumn" msprop:Generator_ColumnPropNameInRow="ad" msprop:Generator_ColumnVarNameInTable="columnad" minOccurs="0">
+              <xs:element name="asistanID" msprop:Generator_ColumnPropNameInTable="asistanIDColumn" msprop:Generator_ColumnPropNameInRow="asistanID" msprop:Generator_UserColumnName="asistanID" msprop:Generator_ColumnVarNameInTable="columnasistanID" type="xs:int" />
+              <xs:element name="sicilNo" msprop:Generator_ColumnPropNameInTable="sicilNoColumn" msprop:Generator_ColumnPropNameInRow="sicilNo" msprop:Generator_UserColumnName="sicilNo" msprop:Generator_ColumnVarNameInTable="columnsicilNo" type="xs:int" minOccurs="0" />
+              <xs:element name="ad" msprop:Generator_ColumnPropNameInTable="adColumn" msprop:Generator_ColumnPropNameInRow="ad" msprop:Generator_UserColumnName="ad" msprop:Generator_ColumnVarNameInTable="columnad" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="soyad" msprop:Generator_UserColumnName="soyad" msprop:Generator_ColumnPropNameInTable="soyadColumn" msprop:Generator_ColumnPropNameInRow="soyad" msprop:Generator_ColumnVarNameInTable="columnsoyad" minOccurs="0">
+              <xs:element name="soyad" msprop:Generator_ColumnPropNameInTable="soyadColumn" msprop:Generator_ColumnPropNameInRow="soyad" msprop:Generator_UserColumnName="soyad" msprop:Generator_ColumnVarNameInTable="columnsoyad" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="takımLideriID" msprop:Generator_UserColumnName="takımLideriID" msprop:Generator_ColumnPropNameInTable="takımLideriIDColumn" msprop:Generator_ColumnPropNameInRow="takımLideriID" msprop:Generator_ColumnVarNameInTable="columntakımLideriID" type="xs:int" minOccurs="0" />
+              <xs:element name="takımLideriID" msprop:Generator_ColumnPropNameInTable="takımLideriIDColumn" msprop:Generator_ColumnPropNameInRow="takımLideriID" msprop:Generator_UserColumnName="takımLideriID" msprop:Generator_ColumnVarNameInTable="columntakımLideriID" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblCagri" msprop:Generator_RowClassName="tblCagriRow" msprop:Generator_RowEvHandlerName="tblCagriRowChangeEventHandler" msprop:Generator_RowDeletedName="tblCagriRowDeleted" msprop:Generator_RowDeletingName="tblCagriRowDeleting" msprop:Generator_RowEvArgName="tblCagriRowChangeEvent" msprop:Generator_TablePropName="tblCagri" msprop:Generator_RowChangedName="tblCagriRowChanged" msprop:Generator_UserTableName="tblCagri" msprop:Generator_RowChangingName="tblCagriRowChanging" msprop:Generator_TableClassName="tblCagriDataTable" msprop:Generator_TableVarName="tabletblCagri">
+        <xs:element name="tblCagri" msprop:Generator_RowEvHandlerName="tblCagriRowChangeEventHandler" msprop:Generator_RowDeletedName="tblCagriRowDeleted" msprop:Generator_RowDeletingName="tblCagriRowDeleting" msprop:Generator_RowEvArgName="tblCagriRowChangeEvent" msprop:Generator_TablePropName="tblCagri" msprop:Generator_RowChangedName="tblCagriRowChanged" msprop:Generator_UserTableName="tblCagri" msprop:Generator_RowChangingName="tblCagriRowChanging" msprop:Generator_RowClassName="tblCagriRow" msprop:Generator_TableClassName="tblCagriDataTable" msprop:Generator_TableVarName="tabletblCagri">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="cagriID" msprop:Generator_UserColumnName="cagriID" msprop:Generator_ColumnPropNameInTable="cagriIDColumn" msprop:Generator_ColumnPropNameInRow="cagriID" msprop:Generator_ColumnVarNameInTable="columncagriID" type="xs:int" />
-              <xs:element name="asistantID" msprop:Generator_UserColumnName="asistantID" msprop:Generator_ColumnPropNameInTable="asistantIDColumn" msprop:Generator_ColumnPropNameInRow="asistantID" msprop:Generator_ColumnVarNameInTable="columnasistantID" type="xs:int" />
-              <xs:element name="müsteriID" msprop:Generator_UserColumnName="müsteriID" msprop:Generator_ColumnPropNameInTable="müsteriIDColumn" msprop:Generator_ColumnPropNameInRow="müsteriID" msprop:Generator_ColumnVarNameInTable="columnmüsteriID" type="xs:int" />
-              <xs:element name="gorusmeKonu" msprop:Generator_UserColumnName="gorusmeKonu" msprop:Generator_ColumnPropNameInTable="gorusmeKonuColumn" msprop:Generator_ColumnPropNameInRow="gorusmeKonu" msprop:Generator_ColumnVarNameInTable="columngorusmeKonu">
+              <xs:element name="cagriID" msprop:Generator_ColumnPropNameInTable="cagriIDColumn" msprop:Generator_ColumnPropNameInRow="cagriID" msprop:Generator_UserColumnName="cagriID" msprop:Generator_ColumnVarNameInTable="columncagriID" type="xs:int" />
+              <xs:element name="asistantID" msprop:Generator_ColumnPropNameInTable="asistantIDColumn" msprop:Generator_ColumnPropNameInRow="asistantID" msprop:Generator_UserColumnName="asistantID" msprop:Generator_ColumnVarNameInTable="columnasistantID" type="xs:int" />
+              <xs:element name="musteriID" msprop:Generator_ColumnPropNameInTable="musteriIDColumn" msprop:Generator_ColumnPropNameInRow="musteriID" msprop:Generator_UserColumnName="musteriID" msprop:Generator_ColumnVarNameInTable="columnmusteriID" type="xs:int" />
+              <xs:element name="gorusmeKonu" msprop:Generator_ColumnPropNameInTable="gorusmeKonuColumn" msprop:Generator_ColumnPropNameInRow="gorusmeKonu" msprop:Generator_UserColumnName="gorusmeKonu" msprop:Generator_ColumnVarNameInTable="columngorusmeKonu">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="gorusmeTarih" msprop:Generator_UserColumnName="gorusmeTarih" msprop:Generator_ColumnPropNameInTable="gorusmeTarihColumn" msprop:Generator_ColumnPropNameInRow="gorusmeTarih" msprop:Generator_ColumnVarNameInTable="columngorusmeTarih" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="baslangicSaati" msprop:Generator_UserColumnName="baslangicSaati" msprop:Generator_ColumnPropNameInTable="baslangicSaatiColumn" msprop:Generator_ColumnPropNameInRow="baslangicSaati" msprop:Generator_ColumnVarNameInTable="columnbaslangicSaati" type="xs:duration" minOccurs="0" />
-              <xs:element name="bitisSaati" msprop:Generator_UserColumnName="bitisSaati" msprop:Generator_ColumnPropNameInTable="bitisSaatiColumn" msprop:Generator_ColumnPropNameInRow="bitisSaati" msprop:Generator_ColumnVarNameInTable="columnbitisSaati" type="xs:duration" minOccurs="0" />
+              <xs:element name="gorusmeTarih" msprop:Generator_ColumnPropNameInTable="gorusmeTarihColumn" msprop:Generator_ColumnPropNameInRow="gorusmeTarih" msprop:Generator_UserColumnName="gorusmeTarih" msprop:Generator_ColumnVarNameInTable="columngorusmeTarih" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="baslangicSaati" msprop:Generator_ColumnPropNameInTable="baslangicSaatiColumn" msprop:Generator_ColumnPropNameInRow="baslangicSaati" msprop:Generator_UserColumnName="baslangicSaati" msprop:Generator_ColumnVarNameInTable="columnbaslangicSaati" type="xs:duration" minOccurs="0" />
+              <xs:element name="bitisSaati" msprop:Generator_ColumnPropNameInTable="bitisSaatiColumn" msprop:Generator_ColumnPropNameInRow="bitisSaati" msprop:Generator_UserColumnName="bitisSaati" msprop:Generator_ColumnVarNameInTable="columnbitisSaati" type="xs:duration" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblCagriDurum" msprop:Generator_RowClassName="tblCagriDurumRow" msprop:Generator_RowEvHandlerName="tblCagriDurumRowChangeEventHandler" msprop:Generator_RowDeletedName="tblCagriDurumRowDeleted" msprop:Generator_RowDeletingName="tblCagriDurumRowDeleting" msprop:Generator_RowEvArgName="tblCagriDurumRowChangeEvent" msprop:Generator_TablePropName="tblCagriDurum" msprop:Generator_RowChangedName="tblCagriDurumRowChanged" msprop:Generator_UserTableName="tblCagriDurum" msprop:Generator_RowChangingName="tblCagriDurumRowChanging" msprop:Generator_TableClassName="tblCagriDurumDataTable" msprop:Generator_TableVarName="tabletblCagriDurum">
+        <xs:element name="tblCagriDurum" msprop:Generator_RowEvHandlerName="tblCagriDurumRowChangeEventHandler" msprop:Generator_RowDeletedName="tblCagriDurumRowDeleted" msprop:Generator_RowDeletingName="tblCagriDurumRowDeleting" msprop:Generator_RowEvArgName="tblCagriDurumRowChangeEvent" msprop:Generator_TablePropName="tblCagriDurum" msprop:Generator_RowChangedName="tblCagriDurumRowChanged" msprop:Generator_UserTableName="tblCagriDurum" msprop:Generator_RowChangingName="tblCagriDurumRowChanging" msprop:Generator_RowClassName="tblCagriDurumRow" msprop:Generator_TableClassName="tblCagriDurumDataTable" msprop:Generator_TableVarName="tabletblCagriDurum">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="gorusmeDurumID" msprop:Generator_UserColumnName="gorusmeDurumID" msprop:Generator_ColumnPropNameInTable="gorusmeDurumIDColumn" msprop:Generator_ColumnPropNameInRow="gorusmeDurumID" msprop:Generator_ColumnVarNameInTable="columngorusmeDurumID" type="xs:int" />
-              <xs:element name="cagriID" msprop:Generator_UserColumnName="cagriID" msprop:Generator_ColumnPropNameInTable="cagriIDColumn" msprop:Generator_ColumnPropNameInRow="cagriID" msprop:Generator_ColumnVarNameInTable="columncagriID" type="xs:int" minOccurs="0" />
-              <xs:element name="aciklama" msprop:Generator_UserColumnName="aciklama" msprop:Generator_ColumnPropNameInTable="aciklamaColumn" msprop:Generator_ColumnPropNameInRow="aciklama" msprop:Generator_ColumnVarNameInTable="columnaciklama" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="tblCagriTip" msprop:Generator_RowClassName="tblCagriTipRow" msprop:Generator_RowEvHandlerName="tblCagriTipRowChangeEventHandler" msprop:Generator_RowDeletedName="tblCagriTipRowDeleted" msprop:Generator_RowDeletingName="tblCagriTipRowDeleting" msprop:Generator_RowEvArgName="tblCagriTipRowChangeEvent" msprop:Generator_TablePropName="tblCagriTip" msprop:Generator_RowChangedName="tblCagriTipRowChanged" msprop:Generator_UserTableName="tblCagriTip" msprop:Generator_RowChangingName="tblCagriTipRowChanging" msprop:Generator_TableClassName="tblCagriTipDataTable" msprop:Generator_TableVarName="tabletblCagriTip">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="cagriTipiID" msprop:Generator_UserColumnName="cagriTipiID" msprop:Generator_ColumnPropNameInTable="cagriTipiIDColumn" msprop:Generator_ColumnPropNameInRow="cagriTipiID" msprop:Generator_ColumnVarNameInTable="columncagriTipiID" type="xs:int" />
-              <xs:element name="cagriID" msprop:Generator_UserColumnName="cagriID" msprop:Generator_ColumnPropNameInTable="cagriIDColumn" msprop:Generator_ColumnPropNameInRow="cagriID" msprop:Generator_ColumnVarNameInTable="columncagriID" type="xs:int" minOccurs="0" />
-              <xs:element name="aciklama" msprop:Generator_UserColumnName="aciklama" msprop:Generator_ColumnPropNameInTable="aciklamaColumn" msprop:Generator_ColumnPropNameInRow="aciklama" msprop:Generator_ColumnVarNameInTable="columnaciklama" minOccurs="0">
+              <xs:element name="gorusmeDurumID" msprop:Generator_ColumnPropNameInTable="gorusmeDurumIDColumn" msprop:Generator_ColumnPropNameInRow="gorusmeDurumID" msprop:Generator_UserColumnName="gorusmeDurumID" msprop:Generator_ColumnVarNameInTable="columngorusmeDurumID" type="xs:int" />
+              <xs:element name="cagriID" msprop:Generator_ColumnPropNameInTable="cagriIDColumn" msprop:Generator_ColumnPropNameInRow="cagriID" msprop:Generator_UserColumnName="cagriID" msprop:Generator_ColumnVarNameInTable="columncagriID" type="xs:int" minOccurs="0" />
+              <xs:element name="aciklama" msprop:Generator_ColumnPropNameInTable="aciklamaColumn" msprop:Generator_ColumnPropNameInRow="aciklama" msprop:Generator_UserColumnName="aciklama" msprop:Generator_ColumnVarNameInTable="columnaciklama" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -752,97 +737,12 @@ SELECT takimLideriID, ad, soyad, email, itirazID, yoneticiID FROM tblTakimLideri
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblGrupYoneticisi" msprop:Generator_RowClassName="tblGrupYoneticisiRow" msprop:Generator_RowEvHandlerName="tblGrupYoneticisiRowChangeEventHandler" msprop:Generator_RowDeletedName="tblGrupYoneticisiRowDeleted" msprop:Generator_RowDeletingName="tblGrupYoneticisiRowDeleting" msprop:Generator_RowEvArgName="tblGrupYoneticisiRowChangeEvent" msprop:Generator_TablePropName="tblGrupYoneticisi" msprop:Generator_RowChangedName="tblGrupYoneticisiRowChanged" msprop:Generator_UserTableName="tblGrupYoneticisi" msprop:Generator_RowChangingName="tblGrupYoneticisiRowChanging" msprop:Generator_TableClassName="tblGrupYoneticisiDataTable" msprop:Generator_TableVarName="tabletblGrupYoneticisi">
+        <xs:element name="tblCagriTip" msprop:Generator_RowEvHandlerName="tblCagriTipRowChangeEventHandler" msprop:Generator_RowDeletedName="tblCagriTipRowDeleted" msprop:Generator_RowDeletingName="tblCagriTipRowDeleting" msprop:Generator_RowEvArgName="tblCagriTipRowChangeEvent" msprop:Generator_TablePropName="tblCagriTip" msprop:Generator_RowChangedName="tblCagriTipRowChanged" msprop:Generator_UserTableName="tblCagriTip" msprop:Generator_RowChangingName="tblCagriTipRowChanging" msprop:Generator_RowClassName="tblCagriTipRow" msprop:Generator_TableClassName="tblCagriTipDataTable" msprop:Generator_TableVarName="tabletblCagriTip">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="yoneticiID" msprop:Generator_UserColumnName="yoneticiID" msprop:Generator_ColumnPropNameInTable="yoneticiIDColumn" msprop:Generator_ColumnPropNameInRow="yoneticiID" msprop:Generator_ColumnVarNameInTable="columnyoneticiID" type="xs:int" />
-              <xs:element name="ad" msprop:Generator_UserColumnName="ad" msprop:Generator_ColumnPropNameInTable="adColumn" msprop:Generator_ColumnPropNameInRow="ad" msprop:Generator_ColumnVarNameInTable="columnad" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="email" msprop:Generator_UserColumnName="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnVarNameInTable="columnemail" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="itirazID" msprop:Generator_UserColumnName="itirazID" msprop:Generator_ColumnPropNameInTable="itirazIDColumn" msprop:Generator_ColumnPropNameInRow="itirazID" msprop:Generator_ColumnVarNameInTable="columnitirazID" type="xs:int" minOccurs="0" />
-              <xs:element name="soyad" msprop:Generator_UserColumnName="soyad" msprop:Generator_ColumnPropNameInTable="soyadColumn" msprop:Generator_ColumnPropNameInRow="soyad" msprop:Generator_ColumnVarNameInTable="columnsoyad" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="tblİtiraz" msprop:Generator_RowClassName="tblİtirazRow" msprop:Generator_RowEvHandlerName="tblİtirazRowChangeEventHandler" msprop:Generator_RowDeletedName="tblİtirazRowDeleted" msprop:Generator_RowDeletingName="tblİtirazRowDeleting" msprop:Generator_RowEvArgName="tblİtirazRowChangeEvent" msprop:Generator_TablePropName="tblİtiraz" msprop:Generator_RowChangedName="tblİtirazRowChanged" msprop:Generator_UserTableName="tblİtiraz" msprop:Generator_RowChangingName="tblİtirazRowChanging" msprop:Generator_TableClassName="tblİtirazDataTable" msprop:Generator_TableVarName="tabletblİtiraz">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="itirazID" msprop:Generator_UserColumnName="itirazID" msprop:Generator_ColumnPropNameInTable="itirazIDColumn" msprop:Generator_ColumnPropNameInRow="itirazID" msprop:Generator_ColumnVarNameInTable="columnitirazID" type="xs:int" />
-              <xs:element name="primID" msprop:Generator_UserColumnName="primID" msprop:Generator_ColumnPropNameInTable="primIDColumn" msprop:Generator_ColumnPropNameInRow="primID" msprop:Generator_ColumnVarNameInTable="columnprimID" type="xs:int" />
-              <xs:element name="ay" msprop:Generator_UserColumnName="ay" msprop:Generator_ColumnPropNameInTable="ayColumn" msprop:Generator_ColumnPropNameInRow="ay" msprop:Generator_ColumnVarNameInTable="columnay" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="itirazDurumID" msprop:Generator_UserColumnName="itirazDurumID" msprop:Generator_ColumnPropNameInTable="itirazDurumIDColumn" msprop:Generator_ColumnPropNameInRow="itirazDurumID" msprop:Generator_ColumnVarNameInTable="columnitirazDurumID" type="xs:int" />
-              <xs:element name="asistanID" msprop:Generator_ColumnPropNameInRow="asistanID" msprop:Generator_ColumnPropNameInTable="asistanIDColumn" msprop:Generator_ColumnVarNameInTable="columnasistanID" msprop:Generator_UserColumnName="asistanID" type="xs:string" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="tblitirazDurum" msprop:Generator_RowClassName="tblitirazDurumRow" msprop:Generator_RowEvHandlerName="tblitirazDurumRowChangeEventHandler" msprop:Generator_RowDeletedName="tblitirazDurumRowDeleted" msprop:Generator_RowDeletingName="tblitirazDurumRowDeleting" msprop:Generator_RowEvArgName="tblitirazDurumRowChangeEvent" msprop:Generator_TablePropName="tblitirazDurum" msprop:Generator_RowChangedName="tblitirazDurumRowChanged" msprop:Generator_UserTableName="tblitirazDurum" msprop:Generator_RowChangingName="tblitirazDurumRowChanging" msprop:Generator_TableClassName="tblitirazDurumDataTable" msprop:Generator_TableVarName="tabletblitirazDurum">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="itirazDurumID" msprop:Generator_UserColumnName="itirazDurumID" msprop:Generator_ColumnPropNameInTable="itirazDurumIDColumn" msprop:Generator_ColumnPropNameInRow="itirazDurumID" msprop:Generator_ColumnVarNameInTable="columnitirazDurumID" type="xs:int" />
-              <xs:element name="itirazID" msprop:Generator_UserColumnName="itirazID" msprop:Generator_ColumnPropNameInTable="itirazIDColumn" msprop:Generator_ColumnPropNameInRow="itirazID" msprop:Generator_ColumnVarNameInTable="columnitirazID" type="xs:int" minOccurs="0" />
-              <xs:element name="aciklama" msprop:Generator_UserColumnName="aciklama" msprop:Generator_ColumnPropNameInTable="aciklamaColumn" msprop:Generator_ColumnPropNameInRow="aciklama" msprop:Generator_ColumnVarNameInTable="columnaciklama" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="tblMusteri" msprop:Generator_RowClassName="tblMusteriRow" msprop:Generator_RowEvHandlerName="tblMusteriRowChangeEventHandler" msprop:Generator_RowDeletedName="tblMusteriRowDeleted" msprop:Generator_RowDeletingName="tblMusteriRowDeleting" msprop:Generator_RowEvArgName="tblMusteriRowChangeEvent" msprop:Generator_TablePropName="tblMusteri" msprop:Generator_RowChangedName="tblMusteriRowChanged" msprop:Generator_UserTableName="tblMusteri" msprop:Generator_RowChangingName="tblMusteriRowChanging" msprop:Generator_TableClassName="tblMusteriDataTable" msprop:Generator_TableVarName="tabletblMusteri">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="müsteriID" msprop:Generator_UserColumnName="müsteriID" msprop:Generator_ColumnPropNameInTable="müsteriIDColumn" msprop:Generator_ColumnPropNameInRow="müsteriID" msprop:Generator_ColumnVarNameInTable="columnmüsteriID" type="xs:int" />
-              <xs:element name="cagriID" msprop:Generator_UserColumnName="cagriID" msprop:Generator_ColumnPropNameInTable="cagriIDColumn" msprop:Generator_ColumnPropNameInRow="cagriID" msprop:Generator_ColumnVarNameInTable="columncagriID" type="xs:int" minOccurs="0" />
-              <xs:element name="ad" msprop:Generator_UserColumnName="ad" msprop:Generator_ColumnPropNameInTable="adColumn" msprop:Generator_ColumnPropNameInRow="ad" msprop:Generator_ColumnVarNameInTable="columnad" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="soyad" msprop:Generator_UserColumnName="soyad" msprop:Generator_ColumnPropNameInTable="soyadColumn" msprop:Generator_ColumnPropNameInRow="soyad" msprop:Generator_ColumnVarNameInTable="columnsoyad" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="tblPrim" msprop:Generator_RowClassName="tblPrimRow" msprop:Generator_RowEvHandlerName="tblPrimRowChangeEventHandler" msprop:Generator_RowDeletedName="tblPrimRowDeleted" msprop:Generator_RowDeletingName="tblPrimRowDeleting" msprop:Generator_RowEvArgName="tblPrimRowChangeEvent" msprop:Generator_TablePropName="tblPrim" msprop:Generator_RowChangedName="tblPrimRowChanged" msprop:Generator_UserTableName="tblPrim" msprop:Generator_RowChangingName="tblPrimRowChanging" msprop:Generator_TableClassName="tblPrimDataTable" msprop:Generator_TableVarName="tabletblPrim">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="primID" msprop:Generator_UserColumnName="primID" msprop:Generator_ColumnPropNameInTable="primIDColumn" msprop:Generator_ColumnPropNameInRow="primID" msprop:Generator_ColumnVarNameInTable="columnprimID" type="xs:int" />
-              <xs:element name="asistanID" msprop:Generator_UserColumnName="asistanID" msprop:Generator_ColumnPropNameInTable="asistanIDColumn" msprop:Generator_ColumnPropNameInRow="asistanID" msprop:Generator_ColumnVarNameInTable="columnasistanID" type="xs:int" minOccurs="0" />
-              <xs:element name="ay" msprop:Generator_UserColumnName="ay" msprop:Generator_ColumnPropNameInTable="ayColumn" msprop:Generator_ColumnPropNameInRow="ay" msprop:Generator_ColumnVarNameInTable="columnay" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="toplamPrim" msprop:Generator_UserColumnName="toplamPrim" msprop:Generator_ColumnPropNameInTable="toplamPrimColumn" msprop:Generator_ColumnPropNameInRow="toplamPrim" msprop:Generator_ColumnVarNameInTable="columntoplamPrim" type="xs:int" minOccurs="0" />
-              <xs:element name="primAciklama" msprop:Generator_UserColumnName="primAciklama" msprop:Generator_ColumnPropNameInTable="primAciklamaColumn" msprop:Generator_ColumnPropNameInRow="primAciklama" msprop:Generator_ColumnVarNameInTable="columnprimAciklama" minOccurs="0">
+              <xs:element name="cagriTipiID" msprop:Generator_ColumnPropNameInTable="cagriTipiIDColumn" msprop:Generator_ColumnPropNameInRow="cagriTipiID" msprop:Generator_UserColumnName="cagriTipiID" msprop:Generator_ColumnVarNameInTable="columncagriTipiID" type="xs:int" />
+              <xs:element name="cagriID" msprop:Generator_ColumnPropNameInTable="cagriIDColumn" msprop:Generator_ColumnPropNameInRow="cagriID" msprop:Generator_UserColumnName="cagriID" msprop:Generator_ColumnVarNameInTable="columncagriID" type="xs:int" minOccurs="0" />
+              <xs:element name="aciklama" msprop:Generator_ColumnPropNameInTable="aciklamaColumn" msprop:Generator_ColumnPropNameInRow="aciklama" msprop:Generator_UserColumnName="aciklama" msprop:Generator_ColumnVarNameInTable="columnaciklama" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -852,33 +752,134 @@ SELECT takimLideriID, ad, soyad, email, itirazID, yoneticiID FROM tblTakimLideri
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblTakimLideri" msprop:Generator_RowClassName="tblTakimLideriRow" msprop:Generator_RowEvHandlerName="tblTakimLideriRowChangeEventHandler" msprop:Generator_RowDeletedName="tblTakimLideriRowDeleted" msprop:Generator_RowDeletingName="tblTakimLideriRowDeleting" msprop:Generator_RowEvArgName="tblTakimLideriRowChangeEvent" msprop:Generator_TablePropName="tblTakimLideri" msprop:Generator_RowChangedName="tblTakimLideriRowChanged" msprop:Generator_UserTableName="tblTakimLideri" msprop:Generator_RowChangingName="tblTakimLideriRowChanging" msprop:Generator_TableClassName="tblTakimLideriDataTable" msprop:Generator_TableVarName="tabletblTakimLideri">
+        <xs:element name="tblGrupYoneticisi" msprop:Generator_RowEvHandlerName="tblGrupYoneticisiRowChangeEventHandler" msprop:Generator_RowDeletedName="tblGrupYoneticisiRowDeleted" msprop:Generator_RowDeletingName="tblGrupYoneticisiRowDeleting" msprop:Generator_RowEvArgName="tblGrupYoneticisiRowChangeEvent" msprop:Generator_TablePropName="tblGrupYoneticisi" msprop:Generator_RowChangedName="tblGrupYoneticisiRowChanged" msprop:Generator_UserTableName="tblGrupYoneticisi" msprop:Generator_RowChangingName="tblGrupYoneticisiRowChanging" msprop:Generator_RowClassName="tblGrupYoneticisiRow" msprop:Generator_TableClassName="tblGrupYoneticisiDataTable" msprop:Generator_TableVarName="tabletblGrupYoneticisi">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="takimLideriID" msprop:Generator_UserColumnName="takimLideriID" msprop:Generator_ColumnPropNameInTable="takimLideriIDColumn" msprop:Generator_ColumnPropNameInRow="takimLideriID" msprop:Generator_ColumnVarNameInTable="columntakimLideriID" type="xs:int" />
-              <xs:element name="ad" msprop:Generator_UserColumnName="ad" msprop:Generator_ColumnPropNameInTable="adColumn" msprop:Generator_ColumnPropNameInRow="ad" msprop:Generator_ColumnVarNameInTable="columnad" minOccurs="0">
+              <xs:element name="yoneticiID" msprop:Generator_ColumnPropNameInTable="yoneticiIDColumn" msprop:Generator_ColumnPropNameInRow="yoneticiID" msprop:Generator_UserColumnName="yoneticiID" msprop:Generator_ColumnVarNameInTable="columnyoneticiID" type="xs:int" />
+              <xs:element name="ad" msprop:Generator_ColumnPropNameInTable="adColumn" msprop:Generator_ColumnPropNameInRow="ad" msprop:Generator_UserColumnName="ad" msprop:Generator_ColumnVarNameInTable="columnad" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="soyad" msprop:Generator_UserColumnName="soyad" msprop:Generator_ColumnPropNameInTable="soyadColumn" msprop:Generator_ColumnPropNameInRow="soyad" msprop:Generator_ColumnVarNameInTable="columnsoyad" minOccurs="0">
+              <xs:element name="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_UserColumnName="email" msprop:Generator_ColumnVarNameInTable="columnemail" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="email" msprop:Generator_UserColumnName="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnVarNameInTable="columnemail" minOccurs="0">
+              <xs:element name="itirazID" msprop:Generator_ColumnPropNameInTable="itirazIDColumn" msprop:Generator_ColumnPropNameInRow="itirazID" msprop:Generator_UserColumnName="itirazID" msprop:Generator_ColumnVarNameInTable="columnitirazID" type="xs:int" minOccurs="0" />
+              <xs:element name="soyad" msprop:Generator_ColumnPropNameInTable="soyadColumn" msprop:Generator_ColumnPropNameInRow="soyad" msprop:Generator_UserColumnName="soyad" msprop:Generator_ColumnVarNameInTable="columnsoyad" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="itirazID" msprop:Generator_UserColumnName="itirazID" msprop:Generator_ColumnPropNameInTable="itirazIDColumn" msprop:Generator_ColumnPropNameInRow="itirazID" msprop:Generator_ColumnVarNameInTable="columnitirazID" type="xs:int" minOccurs="0" />
-              <xs:element name="yoneticiID" msprop:Generator_UserColumnName="yoneticiID" msprop:Generator_ColumnPropNameInTable="yoneticiIDColumn" msprop:Generator_ColumnPropNameInRow="yoneticiID" msprop:Generator_ColumnVarNameInTable="columnyoneticiID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblİtiraz" msprop:Generator_RowEvHandlerName="tblİtirazRowChangeEventHandler" msprop:Generator_RowDeletedName="tblİtirazRowDeleted" msprop:Generator_RowDeletingName="tblİtirazRowDeleting" msprop:Generator_RowEvArgName="tblİtirazRowChangeEvent" msprop:Generator_TablePropName="tblİtiraz" msprop:Generator_RowChangedName="tblİtirazRowChanged" msprop:Generator_UserTableName="tblİtiraz" msprop:Generator_RowChangingName="tblİtirazRowChanging" msprop:Generator_RowClassName="tblİtirazRow" msprop:Generator_TableClassName="tblİtirazDataTable" msprop:Generator_TableVarName="tabletblİtiraz">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="itirazID" msprop:Generator_ColumnPropNameInTable="itirazIDColumn" msprop:Generator_ColumnPropNameInRow="itirazID" msprop:Generator_UserColumnName="itirazID" msprop:Generator_ColumnVarNameInTable="columnitirazID" type="xs:int" />
+              <xs:element name="primID" msprop:Generator_ColumnPropNameInTable="primIDColumn" msprop:Generator_ColumnPropNameInRow="primID" msprop:Generator_UserColumnName="primID" msprop:Generator_ColumnVarNameInTable="columnprimID" type="xs:int" />
+              <xs:element name="ay" msprop:Generator_ColumnPropNameInTable="ayColumn" msprop:Generator_ColumnPropNameInRow="ay" msprop:Generator_UserColumnName="ay" msprop:Generator_ColumnVarNameInTable="columnay" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="itirazDurumID" msprop:Generator_ColumnPropNameInTable="itirazDurumIDColumn" msprop:Generator_ColumnPropNameInRow="itirazDurumID" msprop:Generator_UserColumnName="itirazDurumID" msprop:Generator_ColumnVarNameInTable="columnitirazDurumID" type="xs:int" />
+              <xs:element name="asistanID" msprop:Generator_UserColumnName="asistanID" msprop:Generator_ColumnPropNameInTable="asistanIDColumn" msprop:Generator_ColumnPropNameInRow="asistanID" msprop:Generator_ColumnVarNameInTable="columnasistanID" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblitirazDurum" msprop:Generator_RowEvHandlerName="tblitirazDurumRowChangeEventHandler" msprop:Generator_RowDeletedName="tblitirazDurumRowDeleted" msprop:Generator_RowDeletingName="tblitirazDurumRowDeleting" msprop:Generator_RowEvArgName="tblitirazDurumRowChangeEvent" msprop:Generator_TablePropName="tblitirazDurum" msprop:Generator_RowChangedName="tblitirazDurumRowChanged" msprop:Generator_UserTableName="tblitirazDurum" msprop:Generator_RowChangingName="tblitirazDurumRowChanging" msprop:Generator_RowClassName="tblitirazDurumRow" msprop:Generator_TableClassName="tblitirazDurumDataTable" msprop:Generator_TableVarName="tabletblitirazDurum">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="itirazDurumID" msprop:Generator_ColumnPropNameInTable="itirazDurumIDColumn" msprop:Generator_ColumnPropNameInRow="itirazDurumID" msprop:Generator_UserColumnName="itirazDurumID" msprop:Generator_ColumnVarNameInTable="columnitirazDurumID" type="xs:int" />
+              <xs:element name="itirazID" msprop:Generator_ColumnPropNameInTable="itirazIDColumn" msprop:Generator_ColumnPropNameInRow="itirazID" msprop:Generator_UserColumnName="itirazID" msprop:Generator_ColumnVarNameInTable="columnitirazID" type="xs:int" minOccurs="0" />
+              <xs:element name="aciklama" msprop:Generator_ColumnPropNameInTable="aciklamaColumn" msprop:Generator_ColumnPropNameInRow="aciklama" msprop:Generator_UserColumnName="aciklama" msprop:Generator_ColumnVarNameInTable="columnaciklama" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="asistanID" msprop:Generator_ColumnPropNameInRow="asistanID" msprop:Generator_ColumnPropNameInTable="asistanIDColumn" msprop:Generator_ColumnVarNameInTable="columnasistanID" msprop:Generator_UserColumnName="asistanID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblMusteri" msprop:Generator_RowEvHandlerName="tblMusteriRowChangeEventHandler" msprop:Generator_RowDeletedName="tblMusteriRowDeleted" msprop:Generator_RowDeletingName="tblMusteriRowDeleting" msprop:Generator_RowEvArgName="tblMusteriRowChangeEvent" msprop:Generator_TablePropName="tblMusteri" msprop:Generator_RowChangedName="tblMusteriRowChanged" msprop:Generator_UserTableName="tblMusteri" msprop:Generator_RowChangingName="tblMusteriRowChanging" msprop:Generator_RowClassName="tblMusteriRow" msprop:Generator_TableClassName="tblMusteriDataTable" msprop:Generator_TableVarName="tabletblMusteri">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="musteriID" msprop:Generator_ColumnPropNameInTable="musteriIDColumn" msprop:Generator_ColumnPropNameInRow="musteriID" msprop:Generator_UserColumnName="musteriID" msprop:Generator_ColumnVarNameInTable="columnmusteriID" type="xs:int" />
+              <xs:element name="cagriID" msprop:Generator_ColumnPropNameInTable="cagriIDColumn" msprop:Generator_ColumnPropNameInRow="cagriID" msprop:Generator_UserColumnName="cagriID" msprop:Generator_ColumnVarNameInTable="columncagriID" type="xs:int" minOccurs="0" />
+              <xs:element name="ad" msprop:Generator_ColumnPropNameInTable="adColumn" msprop:Generator_ColumnPropNameInRow="ad" msprop:Generator_UserColumnName="ad" msprop:Generator_ColumnVarNameInTable="columnad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soyad" msprop:Generator_ColumnPropNameInTable="soyadColumn" msprop:Generator_ColumnPropNameInRow="soyad" msprop:Generator_UserColumnName="soyad" msprop:Generator_ColumnVarNameInTable="columnsoyad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblPrim" msprop:Generator_RowEvHandlerName="tblPrimRowChangeEventHandler" msprop:Generator_RowDeletedName="tblPrimRowDeleted" msprop:Generator_RowDeletingName="tblPrimRowDeleting" msprop:Generator_RowEvArgName="tblPrimRowChangeEvent" msprop:Generator_TablePropName="tblPrim" msprop:Generator_RowChangedName="tblPrimRowChanged" msprop:Generator_UserTableName="tblPrim" msprop:Generator_RowChangingName="tblPrimRowChanging" msprop:Generator_RowClassName="tblPrimRow" msprop:Generator_TableClassName="tblPrimDataTable" msprop:Generator_TableVarName="tabletblPrim">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="primID" msprop:Generator_ColumnPropNameInTable="primIDColumn" msprop:Generator_ColumnPropNameInRow="primID" msprop:Generator_UserColumnName="primID" msprop:Generator_ColumnVarNameInTable="columnprimID" type="xs:int" />
+              <xs:element name="asistanID" msprop:Generator_ColumnPropNameInTable="asistanIDColumn" msprop:Generator_ColumnPropNameInRow="asistanID" msprop:Generator_UserColumnName="asistanID" msprop:Generator_ColumnVarNameInTable="columnasistanID" type="xs:int" minOccurs="0" />
+              <xs:element name="ay" msprop:Generator_ColumnPropNameInTable="ayColumn" msprop:Generator_ColumnPropNameInRow="ay" msprop:Generator_UserColumnName="ay" msprop:Generator_ColumnVarNameInTable="columnay" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="toplamPrim" msprop:Generator_ColumnPropNameInTable="toplamPrimColumn" msprop:Generator_ColumnPropNameInRow="toplamPrim" msprop:Generator_UserColumnName="toplamPrim" msprop:Generator_ColumnVarNameInTable="columntoplamPrim" type="xs:int" minOccurs="0" />
+              <xs:element name="primAciklama" msprop:Generator_ColumnPropNameInTable="primAciklamaColumn" msprop:Generator_ColumnPropNameInRow="primAciklama" msprop:Generator_UserColumnName="primAciklama" msprop:Generator_ColumnVarNameInTable="columnprimAciklama" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblTakimLideri" msprop:Generator_RowEvHandlerName="tblTakimLideriRowChangeEventHandler" msprop:Generator_RowDeletedName="tblTakimLideriRowDeleted" msprop:Generator_RowDeletingName="tblTakimLideriRowDeleting" msprop:Generator_RowEvArgName="tblTakimLideriRowChangeEvent" msprop:Generator_TablePropName="tblTakimLideri" msprop:Generator_RowChangedName="tblTakimLideriRowChanged" msprop:Generator_UserTableName="tblTakimLideri" msprop:Generator_RowChangingName="tblTakimLideriRowChanging" msprop:Generator_RowClassName="tblTakimLideriRow" msprop:Generator_TableClassName="tblTakimLideriDataTable" msprop:Generator_TableVarName="tabletblTakimLideri">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="takimLideriID" msprop:Generator_ColumnPropNameInTable="takimLideriIDColumn" msprop:Generator_ColumnPropNameInRow="takimLideriID" msprop:Generator_UserColumnName="takimLideriID" msprop:Generator_ColumnVarNameInTable="columntakimLideriID" type="xs:int" />
+              <xs:element name="ad" msprop:Generator_ColumnPropNameInTable="adColumn" msprop:Generator_ColumnPropNameInRow="ad" msprop:Generator_UserColumnName="ad" msprop:Generator_ColumnVarNameInTable="columnad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soyad" msprop:Generator_ColumnPropNameInTable="soyadColumn" msprop:Generator_ColumnPropNameInRow="soyad" msprop:Generator_UserColumnName="soyad" msprop:Generator_ColumnVarNameInTable="columnsoyad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_UserColumnName="email" msprop:Generator_ColumnVarNameInTable="columnemail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="itirazID" msprop:Generator_ColumnPropNameInTable="itirazIDColumn" msprop:Generator_ColumnPropNameInRow="itirazID" msprop:Generator_UserColumnName="itirazID" msprop:Generator_ColumnVarNameInTable="columnitirazID" type="xs:int" minOccurs="0" />
+              <xs:element name="yoneticiID" msprop:Generator_ColumnPropNameInTable="yoneticiIDColumn" msprop:Generator_ColumnPropNameInRow="yoneticiID" msprop:Generator_UserColumnName="yoneticiID" msprop:Generator_ColumnVarNameInTable="columnyoneticiID" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -914,7 +915,7 @@ SELECT takimLideriID, ad, soyad, email, itirazID, yoneticiID FROM tblTakimLideri
     </xs:unique>
     <xs:unique name="tblMusteri_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:tblMusteri" />
-      <xs:field xpath="mstns:müsteriID" />
+      <xs:field xpath="mstns:musteriID" />
     </xs:unique>
     <xs:unique name="tblPrim_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:tblPrim" />
@@ -927,17 +928,18 @@ SELECT takimLideriID, ad, soyad, email, itirazID, yoneticiID FROM tblTakimLideri
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_tblAsistan_tblTakimLideri" msdata:parent="tblTakimLideri" msdata:child="tblAsistan" msdata:parentkey="takimLideriID" msdata:childkey="takımLideriID" msprop:Generator_UserParentTable="tblTakimLideri" msprop:Generator_UserChildTable="tblAsistan" msprop:Generator_RelationVarName="relationFK_tblAsistan_tblTakimLideri" msprop:Generator_ChildPropName="GettblAsistanRows" msprop:Generator_ParentPropName="tblTakimLideriRow" msprop:Generator_UserRelationName="FK_tblAsistan_tblTakimLideri" />
-      <msdata:Relationship name="FK_tblCagri_tblAsistan" msdata:parent="tblAsistan" msdata:child="tblCagri" msdata:parentkey="asistanID" msdata:childkey="asistantID" msprop:Generator_UserParentTable="tblAsistan" msprop:Generator_UserChildTable="tblCagri" msprop:Generator_RelationVarName="relationFK_tblCagri_tblAsistan" msprop:Generator_ChildPropName="GettblCagriRows" msprop:Generator_UserRelationName="FK_tblCagri_tblAsistan" msprop:Generator_ParentPropName="tblAsistanRow" />
-      <msdata:Relationship name="FK_tblCagriDurum_tblCagri" msdata:parent="tblCagri" msdata:child="tblCagriDurum" msdata:parentkey="cagriID" msdata:childkey="cagriID" msprop:Generator_UserParentTable="tblCagri" msprop:Generator_UserChildTable="tblCagriDurum" msprop:Generator_RelationVarName="relationFK_tblCagriDurum_tblCagri" msprop:Generator_ChildPropName="GettblCagriDurumRows" msprop:Generator_UserRelationName="FK_tblCagriDurum_tblCagri" msprop:Generator_ParentPropName="tblCagriRow" />
-      <msdata:Relationship name="FK_tblCagriTip_tblCagri" msdata:parent="tblCagri" msdata:child="tblCagriTip" msdata:parentkey="cagriID" msdata:childkey="cagriID" msprop:Generator_UserParentTable="tblCagri" msprop:Generator_UserChildTable="tblCagriTip" msprop:Generator_RelationVarName="relationFK_tblCagriTip_tblCagri" msprop:Generator_ChildPropName="GettblCagriTipRows" msprop:Generator_UserRelationName="FK_tblCagriTip_tblCagri" msprop:Generator_ParentPropName="tblCagriRow" />
-      <msdata:Relationship name="FK_tblGrupYoneticisi_tblİtiraz" msdata:parent="tblİtiraz" msdata:child="tblGrupYoneticisi" msdata:parentkey="itirazID" msdata:childkey="itirazID" msprop:Generator_UserParentTable="tblİtiraz" msprop:Generator_UserChildTable="tblGrupYoneticisi" msprop:Generator_RelationVarName="relationFK_tblGrupYoneticisi_tblİtiraz" msprop:Generator_ChildPropName="GettblGrupYoneticisiRows" msprop:Generator_ParentPropName="tblİtirazRow" msprop:Generator_UserRelationName="FK_tblGrupYoneticisi_tblİtiraz" />
-      <msdata:Relationship name="FK_tblİtiraz_tblitirazDurum" msdata:parent="tblitirazDurum" msdata:child="tblİtiraz" msdata:parentkey="itirazDurumID" msdata:childkey="itirazDurumID" msprop:Generator_UserParentTable="tblitirazDurum" msprop:Generator_UserChildTable="tblİtiraz" msprop:Generator_RelationVarName="relationFK_tblİtiraz_tblitirazDurum" msprop:Generator_ChildPropName="GettblİtirazRows" msprop:Generator_ParentPropName="tblitirazDurumRow" msprop:Generator_UserRelationName="FK_tblİtiraz_tblitirazDurum" />
-      <msdata:Relationship name="FK_tblİtiraz_tblPrim" msdata:parent="tblPrim" msdata:child="tblİtiraz" msdata:parentkey="primID" msdata:childkey="primID" msprop:Generator_UserParentTable="tblPrim" msprop:Generator_UserChildTable="tblİtiraz" msprop:Generator_RelationVarName="relationFK_tblİtiraz_tblPrim" msprop:Generator_ChildPropName="GettblİtirazRows" msprop:Generator_ParentPropName="tblPrimRow" msprop:Generator_UserRelationName="FK_tblİtiraz_tblPrim" />
-      <msdata:Relationship name="FK_tblMusteri_tblCagri" msdata:parent="tblCagri" msdata:child="tblMusteri" msdata:parentkey="cagriID" msdata:childkey="cagriID" msprop:Generator_UserParentTable="tblCagri" msprop:Generator_UserChildTable="tblMusteri" msprop:Generator_RelationVarName="relationFK_tblMusteri_tblCagri" msprop:Generator_ChildPropName="GettblMusteriRows" msprop:Generator_UserRelationName="FK_tblMusteri_tblCagri" msprop:Generator_ParentPropName="tblCagriRow" />
-      <msdata:Relationship name="FK_tblPrim_tblAsistan" msdata:parent="tblAsistan" msdata:child="tblPrim" msdata:parentkey="asistanID" msdata:childkey="asistanID" msprop:Generator_UserParentTable="tblAsistan" msprop:Generator_UserChildTable="tblPrim" msprop:Generator_RelationVarName="relationFK_tblPrim_tblAsistan" msprop:Generator_ChildPropName="GettblPrimRows" msprop:Generator_UserRelationName="FK_tblPrim_tblAsistan" msprop:Generator_ParentPropName="tblAsistanRow" />
-      <msdata:Relationship name="FK_tblTakimLideri_tblGrupYoneticisi" msdata:parent="tblGrupYoneticisi" msdata:child="tblTakimLideri" msdata:parentkey="yoneticiID" msdata:childkey="yoneticiID" msprop:Generator_UserParentTable="tblGrupYoneticisi" msprop:Generator_UserChildTable="tblTakimLideri" msprop:Generator_RelationVarName="relationFK_tblTakimLideri_tblGrupYoneticisi" msprop:Generator_ChildPropName="GettblTakimLideriRows" msprop:Generator_UserRelationName="FK_tblTakimLideri_tblGrupYoneticisi" msprop:Generator_ParentPropName="tblGrupYoneticisiRow" />
-      <msdata:Relationship name="FK_tblTakimLideri_tblİtiraz" msdata:parent="tblİtiraz" msdata:child="tblTakimLideri" msdata:parentkey="itirazID" msdata:childkey="itirazID" msprop:Generator_UserParentTable="tblİtiraz" msprop:Generator_UserChildTable="tblTakimLideri" msprop:Generator_RelationVarName="relationFK_tblTakimLideri_tblİtiraz" msprop:Generator_ChildPropName="GettblTakimLideriRows" msprop:Generator_UserRelationName="FK_tblTakimLideri_tblİtiraz" msprop:Generator_ParentPropName="tblİtirazRow" />
+      <msdata:Relationship name="FK_tblAsistan_tblTakimLideri" msdata:parent="tblTakimLideri" msdata:child="tblAsistan" msdata:parentkey="takimLideriID" msdata:childkey="takımLideriID" msprop:Generator_UserParentTable="tblTakimLideri" msprop:Generator_UserChildTable="tblAsistan" msprop:Generator_RelationVarName="relationFK_tblAsistan_tblTakimLideri" msprop:Generator_ChildPropName="GettblAsistanRows" msprop:Generator_UserRelationName="FK_tblAsistan_tblTakimLideri" msprop:Generator_ParentPropName="tblTakimLideriRow" />
+      <msdata:Relationship name="FK_tblCagri_tblAsistan" msdata:parent="tblAsistan" msdata:child="tblCagri" msdata:parentkey="asistanID" msdata:childkey="asistantID" msprop:Generator_UserParentTable="tblAsistan" msprop:Generator_UserChildTable="tblCagri" msprop:Generator_RelationVarName="relationFK_tblCagri_tblAsistan" msprop:Generator_ChildPropName="GettblCagriRows" msprop:Generator_ParentPropName="tblAsistanRow" msprop:Generator_UserRelationName="FK_tblCagri_tblAsistan" />
+      <msdata:Relationship name="FK_tblCagriDurum_tblCagri" msdata:parent="tblCagri" msdata:child="tblCagriDurum" msdata:parentkey="cagriID" msdata:childkey="cagriID" msprop:Generator_UserParentTable="tblCagri" msprop:Generator_UserChildTable="tblCagriDurum" msprop:Generator_RelationVarName="relationFK_tblCagriDurum_tblCagri" msprop:Generator_ChildPropName="GettblCagriDurumRows" msprop:Generator_ParentPropName="tblCagriRow" msprop:Generator_UserRelationName="FK_tblCagriDurum_tblCagri" />
+      <msdata:Relationship name="FK_tblCagriTip_tblCagri" msdata:parent="tblCagri" msdata:child="tblCagriTip" msdata:parentkey="cagriID" msdata:childkey="cagriID" msprop:Generator_UserParentTable="tblCagri" msprop:Generator_UserChildTable="tblCagriTip" msprop:Generator_RelationVarName="relationFK_tblCagriTip_tblCagri" msprop:Generator_ChildPropName="GettblCagriTipRows" msprop:Generator_ParentPropName="tblCagriRow" msprop:Generator_UserRelationName="FK_tblCagriTip_tblCagri" />
+      <msdata:Relationship name="FK_tblGrupYoneticisi_tblİtiraz" msdata:parent="tblİtiraz" msdata:child="tblGrupYoneticisi" msdata:parentkey="itirazID" msdata:childkey="itirazID" msprop:Generator_UserParentTable="tblİtiraz" msprop:Generator_UserChildTable="tblGrupYoneticisi" msprop:Generator_RelationVarName="relationFK_tblGrupYoneticisi_tblİtiraz" msprop:Generator_ChildPropName="GettblGrupYoneticisiRows" msprop:Generator_UserRelationName="FK_tblGrupYoneticisi_tblİtiraz" msprop:Generator_ParentPropName="tblİtirazRow" />
+      <msdata:Relationship name="FK_tblİtiraz_tblitirazDurum" msdata:parent="tblitirazDurum" msdata:child="tblİtiraz" msdata:parentkey="itirazDurumID" msdata:childkey="itirazDurumID" msprop:Generator_UserParentTable="tblitirazDurum" msprop:Generator_UserChildTable="tblİtiraz" msprop:Generator_RelationVarName="relationFK_tblİtiraz_tblitirazDurum" msprop:Generator_ChildPropName="GettblİtirazRows" msprop:Generator_UserRelationName="FK_tblİtiraz_tblitirazDurum" msprop:Generator_ParentPropName="tblitirazDurumRow" />
+      <msdata:Relationship name="FK_tblİtiraz_tblPrim" msdata:parent="tblPrim" msdata:child="tblİtiraz" msdata:parentkey="primID" msdata:childkey="primID" msprop:Generator_UserParentTable="tblPrim" msprop:Generator_UserChildTable="tblİtiraz" msprop:Generator_RelationVarName="relationFK_tblİtiraz_tblPrim" msprop:Generator_ChildPropName="GettblİtirazRows" msprop:Generator_UserRelationName="FK_tblİtiraz_tblPrim" msprop:Generator_ParentPropName="tblPrimRow" />
+      <msdata:Relationship name="FK_tblMusteri_tblCagri" msdata:parent="tblCagri" msdata:child="tblMusteri" msdata:parentkey="cagriID" msdata:childkey="cagriID" msprop:Generator_UserParentTable="tblCagri" msprop:Generator_UserChildTable="tblMusteri" msprop:Generator_RelationVarName="relationFK_tblMusteri_tblCagri" msprop:Generator_ChildPropName="GettblMusteriRows" msprop:Generator_ParentPropName="tblCagriRow" msprop:Generator_UserRelationName="FK_tblMusteri_tblCagri" />
+      <msdata:Relationship name="FK_tblPrim_tblAsistan" msdata:parent="tblAsistan" msdata:child="tblPrim" msdata:parentkey="asistanID" msdata:childkey="asistanID" msprop:Generator_UserParentTable="tblAsistan" msprop:Generator_UserChildTable="tblPrim" msprop:Generator_RelationVarName="relationFK_tblPrim_tblAsistan" msprop:Generator_ChildPropName="GettblPrimRows" msprop:Generator_ParentPropName="tblAsistanRow" msprop:Generator_UserRelationName="FK_tblPrim_tblAsistan" />
+      <msdata:Relationship name="FK_tblTakimLideri_tblGrupYoneticisi" msdata:parent="tblGrupYoneticisi" msdata:child="tblTakimLideri" msdata:parentkey="yoneticiID" msdata:childkey="yoneticiID" msprop:Generator_UserParentTable="tblGrupYoneticisi" msprop:Generator_UserChildTable="tblTakimLideri" msprop:Generator_RelationVarName="relationFK_tblTakimLideri_tblGrupYoneticisi" msprop:Generator_ChildPropName="GettblTakimLideriRows" msprop:Generator_ParentPropName="tblGrupYoneticisiRow" msprop:Generator_UserRelationName="FK_tblTakimLideri_tblGrupYoneticisi" />
+      <msdata:Relationship name="FK_tblTakimLideri_tblİtiraz" msdata:parent="tblİtiraz" msdata:child="tblTakimLideri" msdata:parentkey="itirazID" msdata:childkey="itirazID" msprop:Generator_UserParentTable="tblİtiraz" msprop:Generator_UserChildTable="tblTakimLideri" msprop:Generator_RelationVarName="relationFK_tblTakimLideri_tblİtiraz" msprop:Generator_ChildPropName="GettblTakimLideriRows" msprop:Generator_ParentPropName="tblİtirazRow" msprop:Generator_UserRelationName="FK_tblTakimLideri_tblİtiraz" />
+      <msdata:Relationship name="tblAsistan_tblitirazDurum" msdata:parent="tblAsistan" msdata:child="tblitirazDurum" msdata:parentkey="asistanID" msdata:childkey="asistanID" msprop:Generator_UserParentTable="tblAsistan" msprop:Generator_UserChildTable="tblitirazDurum" msprop:Generator_RelationVarName="relationtblAsistan_tblitirazDurum" msprop:Generator_ChildPropName="GettblitirazDurumRows" msprop:Generator_ParentPropName="tblAsistanRow" msprop:Generator_UserRelationName="tblAsistan_tblitirazDurum" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

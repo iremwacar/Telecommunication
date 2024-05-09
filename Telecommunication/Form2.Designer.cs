@@ -31,6 +31,7 @@
             this.btnItirazListe = new System.Windows.Forms.Button();
             this.btnPrimListe = new System.Windows.Forms.Button();
             this.btnCagriListe = new System.Windows.Forms.Button();
+            this.btnGeri = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnItirazListe
@@ -65,17 +66,32 @@
             this.btnCagriListe.TabIndex = 3;
             this.btnCagriListe.Text = "Müşteri Çağrı Listesi Menüsü";
             this.btnCagriListe.UseVisualStyleBackColor = false;
+            this.btnCagriListe.Click += new System.EventHandler(this.btnCagriListe_Click);
+            // 
+            // btnGeri
+            // 
+            this.btnGeri.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGeri.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnGeri.Location = new System.Drawing.Point(17, 402);
+            this.btnGeri.Name = "btnGeri";
+            this.btnGeri.Size = new System.Drawing.Size(89, 28);
+            this.btnGeri.TabIndex = 6;
+            this.btnGeri.Text = "Geri";
+            this.btnGeri.UseVisualStyleBackColor = true;
+            this.btnGeri.Click += new System.EventHandler(this.btnGeri_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnGeri);
             this.Controls.Add(this.btnItirazListe);
             this.Controls.Add(this.btnPrimListe);
             this.Controls.Add(this.btnCagriListe);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
 
         }
@@ -85,5 +101,6 @@
         private System.Windows.Forms.Button btnItirazListe;
         private System.Windows.Forms.Button btnPrimListe;
         private System.Windows.Forms.Button btnCagriListe;
+        private System.Windows.Forms.Button btnGeri;
     }
 }

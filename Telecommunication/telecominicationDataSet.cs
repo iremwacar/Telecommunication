@@ -4,5 +4,8 @@
 
     partial class telecominicationDataSet
     {
+        partial class tblitirazDurumDataTable
+        {
+        }
     }
 }

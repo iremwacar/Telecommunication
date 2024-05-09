@@ -66,6 +66,8 @@ namespace Telecommunication {
         
         private global::System.Data.DataRelation relationFK_tblTakimLideri_tblİtiraz;
         
+        private global::System.Data.DataRelation relationtblAsistan_tblitirazDurum;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -443,6 +445,7 @@ namespace Telecommunication {
             this.relationFK_tblPrim_tblAsistan = this.Relations["FK_tblPrim_tblAsistan"];
             this.relationFK_tblTakimLideri_tblGrupYoneticisi = this.Relations["FK_tblTakimLideri_tblGrupYoneticisi"];
             this.relationFK_tblTakimLideri_tblİtiraz = this.Relations["FK_tblTakimLideri_tblİtiraz"];
+            this.relationtblAsistan_tblitirazDurum = this.Relations["tblAsistan_tblitirazDurum"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -517,6 +520,10 @@ namespace Telecommunication {
                         this.tabletblİtiraz.itirazIDColumn}, new global::System.Data.DataColumn[] {
                         this.tabletblTakimLideri.itirazIDColumn}, false);
             this.Relations.Add(this.relationFK_tblTakimLideri_tblİtiraz);
+            this.relationtblAsistan_tblitirazDurum = new global::System.Data.DataRelation("tblAsistan_tblitirazDurum", new global::System.Data.DataColumn[] {
+                        this.tabletblAsistan.asistanIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletblitirazDurum.asistanIDColumn}, false);
+            this.Relations.Add(this.relationtblAsistan_tblitirazDurum);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -994,7 +1001,7 @@ namespace Telecommunication {
             
             private global::System.Data.DataColumn columnasistantID;
             
-            private global::System.Data.DataColumn columnmüsteriID;
+            private global::System.Data.DataColumn columnmusteriID;
             
             private global::System.Data.DataColumn columngorusmeKonu;
             
@@ -1055,9 +1062,9 @@ namespace Telecommunication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn müsteriIDColumn {
+            public global::System.Data.DataColumn musteriIDColumn {
                 get {
-                    return this.columnmüsteriID;
+                    return this.columnmusteriID;
                 }
             }
             
@@ -1130,12 +1137,12 @@ namespace Telecommunication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblCagriRow AddtblCagriRow(int cagriID, tblAsistanRow parenttblAsistanRowByFK_tblCagri_tblAsistan, int müsteriID, string gorusmeKonu, System.DateTime gorusmeTarih, System.TimeSpan baslangicSaati, System.TimeSpan bitisSaati) {
+            public tblCagriRow AddtblCagriRow(int cagriID, tblAsistanRow parenttblAsistanRowByFK_tblCagri_tblAsistan, int musteriID, string gorusmeKonu, System.DateTime gorusmeTarih, System.TimeSpan baslangicSaati, System.TimeSpan bitisSaati) {
                 tblCagriRow rowtblCagriRow = ((tblCagriRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         cagriID,
                         null,
-                        müsteriID,
+                        musteriID,
                         gorusmeKonu,
                         gorusmeTarih,
                         baslangicSaati,
@@ -1174,7 +1181,7 @@ namespace Telecommunication {
             internal void InitVars() {
                 this.columncagriID = base.Columns["cagriID"];
                 this.columnasistantID = base.Columns["asistantID"];
-                this.columnmüsteriID = base.Columns["müsteriID"];
+                this.columnmusteriID = base.Columns["musteriID"];
                 this.columngorusmeKonu = base.Columns["gorusmeKonu"];
                 this.columngorusmeTarih = base.Columns["gorusmeTarih"];
                 this.columnbaslangicSaati = base.Columns["baslangicSaati"];
@@ -1188,8 +1195,8 @@ namespace Telecommunication {
                 base.Columns.Add(this.columncagriID);
                 this.columnasistantID = new global::System.Data.DataColumn("asistantID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnasistantID);
-                this.columnmüsteriID = new global::System.Data.DataColumn("müsteriID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmüsteriID);
+                this.columnmusteriID = new global::System.Data.DataColumn("musteriID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmusteriID);
                 this.columngorusmeKonu = new global::System.Data.DataColumn("gorusmeKonu", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngorusmeKonu);
                 this.columngorusmeTarih = new global::System.Data.DataColumn("gorusmeTarih", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -1203,7 +1210,7 @@ namespace Telecommunication {
                 this.columncagriID.AllowDBNull = false;
                 this.columncagriID.Unique = true;
                 this.columnasistantID.AllowDBNull = false;
-                this.columnmüsteriID.AllowDBNull = false;
+                this.columnmusteriID.AllowDBNull = false;
                 this.columngorusmeKonu.AllowDBNull = false;
                 this.columngorusmeKonu.MaxLength = 50;
             }
@@ -2567,6 +2574,8 @@ namespace Telecommunication {
             
             private global::System.Data.DataColumn columnaciklama;
             
+            private global::System.Data.DataColumn columnasistanID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tblitirazDurumDataTable() {
@@ -2626,6 +2635,14 @@ namespace Telecommunication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn asistanIDColumn {
+                get {
+                    return this.columnasistanID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2661,12 +2678,16 @@ namespace Telecommunication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblitirazDurumRow AddtblitirazDurumRow(int itirazDurumID, int itirazID, string aciklama) {
+            public tblitirazDurumRow AddtblitirazDurumRow(int itirazDurumID, int itirazID, string aciklama, tblAsistanRow parenttblAsistanRowBytblAsistan_tblitirazDurum) {
                 tblitirazDurumRow rowtblitirazDurumRow = ((tblitirazDurumRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         itirazDurumID,
                         itirazID,
-                        aciklama};
+                        aciklama,
+                        null};
+                if ((parenttblAsistanRowBytblAsistan_tblitirazDurum != null)) {
+                    columnValuesArray[3] = parenttblAsistanRowBytblAsistan_tblitirazDurum[0];
+                }
                 rowtblitirazDurumRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtblitirazDurumRow);
                 return rowtblitirazDurumRow;
@@ -2699,6 +2720,7 @@ namespace Telecommunication {
                 this.columnitirazDurumID = base.Columns["itirazDurumID"];
                 this.columnitirazID = base.Columns["itirazID"];
                 this.columnaciklama = base.Columns["aciklama"];
+                this.columnasistanID = base.Columns["asistanID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2710,6 +2732,8 @@ namespace Telecommunication {
                 base.Columns.Add(this.columnitirazID);
                 this.columnaciklama = new global::System.Data.DataColumn("aciklama", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnaciklama);
+                this.columnasistanID = new global::System.Data.DataColumn("asistanID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnasistanID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnitirazDurumID}, true));
                 this.columnitirazDurumID.AllowDBNull = false;
@@ -2848,7 +2872,7 @@ namespace Telecommunication {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class tblMusteriDataTable : global::System.Data.TypedTableBase<tblMusteriRow> {
             
-            private global::System.Data.DataColumn columnmüsteriID;
+            private global::System.Data.DataColumn columnmusteriID;
             
             private global::System.Data.DataColumn columncagriID;
             
@@ -2891,9 +2915,9 @@ namespace Telecommunication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn müsteriIDColumn {
+            public global::System.Data.DataColumn musteriIDColumn {
                 get {
-                    return this.columnmüsteriID;
+                    return this.columnmusteriID;
                 }
             }
             
@@ -2958,10 +2982,10 @@ namespace Telecommunication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblMusteriRow AddtblMusteriRow(int müsteriID, tblCagriRow parenttblCagriRowByFK_tblMusteri_tblCagri, string ad, string soyad) {
+            public tblMusteriRow AddtblMusteriRow(int musteriID, tblCagriRow parenttblCagriRowByFK_tblMusteri_tblCagri, string ad, string soyad) {
                 tblMusteriRow rowtblMusteriRow = ((tblMusteriRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        müsteriID,
+                        musteriID,
                         null,
                         ad,
                         soyad};
@@ -2975,9 +2999,9 @@ namespace Telecommunication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblMusteriRow FindBymüsteriID(int müsteriID) {
+            public tblMusteriRow FindBymusteriID(int musteriID) {
                 return ((tblMusteriRow)(this.Rows.Find(new object[] {
-                            müsteriID})));
+                            musteriID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2997,7 +3021,7 @@ namespace Telecommunication {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnmüsteriID = base.Columns["müsteriID"];
+                this.columnmusteriID = base.Columns["musteriID"];
                 this.columncagriID = base.Columns["cagriID"];
                 this.columnad = base.Columns["ad"];
                 this.columnsoyad = base.Columns["soyad"];
@@ -3006,8 +3030,8 @@ namespace Telecommunication {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnmüsteriID = new global::System.Data.DataColumn("müsteriID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmüsteriID);
+                this.columnmusteriID = new global::System.Data.DataColumn("musteriID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmusteriID);
                 this.columncagriID = new global::System.Data.DataColumn("cagriID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncagriID);
                 this.columnad = new global::System.Data.DataColumn("ad", typeof(string), null, global::System.Data.MappingType.Element);
@@ -3015,9 +3039,9 @@ namespace Telecommunication {
                 this.columnsoyad = new global::System.Data.DataColumn("soyad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsoyad);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnmüsteriID}, true));
-                this.columnmüsteriID.AllowDBNull = false;
-                this.columnmüsteriID.Unique = true;
+                                this.columnmusteriID}, true));
+                this.columnmusteriID.AllowDBNull = false;
+                this.columnmusteriID.Unique = true;
                 this.columnad.MaxLength = 10;
                 this.columnsoyad.MaxLength = 10;
             }
@@ -3971,6 +3995,17 @@ namespace Telecommunication {
                     return ((tblPrimRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tblPrim_tblAsistan"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public tblitirazDurumRow[] GettblitirazDurumRows() {
+                if ((this.Table.ChildRelations["tblAsistan_tblitirazDurum"] == null)) {
+                    return new tblitirazDurumRow[0];
+                }
+                else {
+                    return ((tblitirazDurumRow[])(base.GetChildRows(this.Table.ChildRelations["tblAsistan_tblitirazDurum"])));
+                }
+            }
         }
         
         /// <summary>
@@ -4011,12 +4046,12 @@ namespace Telecommunication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int müsteriID {
+            public int musteriID {
                 get {
-                    return ((int)(this[this.tabletblCagri.müsteriIDColumn]));
+                    return ((int)(this[this.tabletblCagri.musteriIDColumn]));
                 }
                 set {
-                    this[this.tabletblCagri.müsteriIDColumn] = value;
+                    this[this.tabletblCagri.musteriIDColumn] = value;
                 }
             }
             
@@ -4713,6 +4748,33 @@ namespace Telecommunication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int asistanID {
+                get {
+                    try {
+                        return ((int)(this[this.tabletblitirazDurum.asistanIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'tblitirazDurum\' tablosundaki \'asistanID\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblitirazDurum.asistanIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public tblAsistanRow tblAsistanRow {
+                get {
+                    return ((tblAsistanRow)(this.GetParentRow(this.Table.ParentRelations["tblAsistan_tblitirazDurum"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["tblAsistan_tblitirazDurum"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsitirazIDNull() {
                 return this.IsNull(this.tabletblitirazDurum.itirazIDColumn);
             }
@@ -4733,6 +4795,18 @@ namespace Telecommunication {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetaciklamaNull() {
                 this[this.tabletblitirazDurum.aciklamaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsasistanIDNull() {
+                return this.IsNull(this.tabletblitirazDurum.asistanIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetasistanIDNull() {
+                this[this.tabletblitirazDurum.asistanIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4763,12 +4837,12 @@ namespace Telecommunication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int müsteriID {
+            public int musteriID {
                 get {
-                    return ((int)(this[this.tabletblMusteri.müsteriIDColumn]));
+                    return ((int)(this[this.tabletblMusteri.musteriIDColumn]));
                 }
                 set {
-                    this[this.tabletblMusteri.müsteriIDColumn] = value;
+                    this[this.tabletblMusteri.musteriIDColumn] = value;
                 }
             }
             
@@ -6125,7 +6199,7 @@ SELECT asistanID, sicilNo, ad, soyad, takımLideriID FROM tblAsistan WHERE (asis
             tableMapping.DataSetTable = "tblCagri";
             tableMapping.ColumnMappings.Add("cagriID", "cagriID");
             tableMapping.ColumnMappings.Add("asistantID", "asistantID");
-            tableMapping.ColumnMappings.Add("müsteriID", "müsteriID");
+            tableMapping.ColumnMappings.Add("müsteriID", "musteriID");
             tableMapping.ColumnMappings.Add("gorusmeKonu", "gorusmeKonu");
             tableMapping.ColumnMappings.Add("gorusmeTarih", "gorusmeTarih");
             tableMapping.ColumnMappings.Add("baslangicSaati", "baslangicSaati");
@@ -8424,7 +8498,7 @@ SELECT itirazDurumID, itirazID, aciklama FROM tblitirazDurum WHERE (itirazDurumI
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "tblMusteri";
-            tableMapping.ColumnMappings.Add("müsteriID", "müsteriID");
+            tableMapping.ColumnMappings.Add("müsteriID", "musteriID");
             tableMapping.ColumnMappings.Add("cagriID", "cagriID");
             tableMapping.ColumnMappings.Add("ad", "ad");
             tableMapping.ColumnMappings.Add("soyad", "soyad");
@@ -8687,14 +8761,6 @@ SELECT müsteriID, cagriID, ad, soyad FROM tblMusteri WHERE (müsteriID = @müst
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> cagriID, string ad, string soyad, int Original_müsteriID, global::System.Nullable<int> Original_cagriID, string Original_ad, string Original_soyad) {
-            return this.Update(Original_müsteriID, cagriID, ad, soyad, Original_müsteriID, Original_cagriID, Original_ad, Original_soyad);
         }
     }
     
